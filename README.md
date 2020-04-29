@@ -19,10 +19,10 @@ curl 127.0.0.1:8000/validation -d '{ "password": "foobar" }'
 ## Custom Validations
 You can implement your password validation:
 ```go
-func maxLength(min int) validator.Validation {
+func maxLength(max int) validator.Validation {
 	return func(pwd string) error {
-		if len(pwd) < min {
-			return fmt.Errorf("must be no more than %v characters", min)
+		if len(pwd) < max {
+			return fmt.Errorf("must be no more than %v characters", max)
 		}
 		return nil
 	}
