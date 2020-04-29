@@ -21,7 +21,7 @@ You can implement your password validation:
 ```go
 func maxLength(max int) validator.Validation {
 	return func(pwd string) error {
-		if len(pwd) < max {
+		if len(pwd) > max {
 			return fmt.Errorf("must be no more than %v characters", max)
 		}
 		return nil
